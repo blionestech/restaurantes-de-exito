@@ -1,0 +1,74 @@
+---
+import { solution } from "../data/content";
+
+// Custom steps for the 3-Step ROI System based on the reference
+// Ideally these should be in content.ts, but mapping existing points for now or hardcoding the structure
+const steps = [
+    {
+        number: "1",
+        icon: "🛡️",
+        title: "Blindaje Financiero",
+        description: "Estructura de costos y precios para garantizar rentabilidad desde el primer plato."
+    },
+    {
+        number: "2",
+        icon: "✅",
+        title: "Estandarización Total",
+        description: "Manuales y procesos para que el negocio funcione sin que tú tengas que estar ahí."
+    },
+    {
+        number: "3",
+        icon: "☀️",
+        title: "Libertad del Dueño",
+        description: "Un sistema de marketing y ventas que trae clientes predecibles mes con mes."
+    }
+];
+---
+
+<section class="section-padding bg-brand-900/30 relative overflow-hidden">
+    <!-- Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-950 to-brand-900/50"></div>
+
+    <div class="container-narrow relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16 animate-fade-in-up">
+            <span class="text-gold-400 font-bold tracking-wider uppercase text-sm mb-2 block">
+                La Solución
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                El Sistema R.O.I. de 3 Pasos
+            </h2>
+            <p class="text-xl text-brand-400">
+                {solution.subtitle}
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            {
+                steps.map((step, i) => (
+                    <div 
+                        class="glass-card p-8 relative overflow-hidden group hover:border-gold-400/50 transition-all duration-300"
+                        style={`animation-delay: ${(i + 1) * 150}ms`}
+                    >
+                        <!-- Large Number Watermark -->
+                        <div class="absolute -right-4 -bottom-8 text-[10rem] font-black text-white/5 pointer-events-none select-none leading-none group-hover:text-gold-500/10 transition-colors duration-500">
+                            {step.number}
+                        </div>
+
+                        <div class="relative z-10">
+                            <div class="w-16 h-16 bg-gold-500/10 rounded-2xl flex items-center justify-center text-3xl mb-6 border border-gold-500/20 group-hover:scale-110 transition-transform duration-300">
+                                {step.icon}
+                            </div>
+                            
+                            <h3 class="text-xl font-bold text-white mb-3">
+                                {step.number}. {step.title}
+                            </h3>
+                            <p class="text-brand-400 leading-relaxed text-sm">
+                                {step.description}
+                            </p>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

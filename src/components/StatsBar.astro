@@ -1,0 +1,24 @@
+---
+import { stats } from "../data/content";
+---
+
+<section class="relative z-20 -mt-16 container-narrow px-4">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {
+            stats.map((stat, i) => (
+                <div
+                    class="glass-card p-6 text-center animate-fade-in-up"
+                    style={`animation-delay: ${i * 100}ms; border-top: 3px solid var(--color-gold-400);`}
+                >
+                    <div class="text-3xl mb-2">{stat.icon}</div>
+                    <p class="text-3xl sm:text-4xl font-black text-white mb-1 tracking-tight">
+                        {stat.value}
+                    </p>
+                    <p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-brand-500">
+                        {stat.label}
+                    </p>
+                </div>
+            ))
+        }
+    </div>
+</section>

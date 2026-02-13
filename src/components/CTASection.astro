@@ -1,0 +1,133 @@
+---
+import { ctaSection } from "../data/content";
+---
+
+<section id="cta-final" class="section-padding relative overflow-hidden">
+    <!-- Background Gradient -->
+    <div class="absolute inset-0 bg-brand-950">
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-brand-900 to-black opacity-80"
+        >
+        </div>
+    </div>
+
+    <!-- Decorative Glow -->
+    <div
+        class="absolute -top-24 -right-24 w-96 h-96 bg-gold-600/20 rounded-full blur-3xl"
+    >
+    </div>
+
+    <div class="container-narrow relative z-10">
+        <div class="glass-card p-8 md:p-12 border-brand-800">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-center lg:text-left">
+                    <span
+                        class="text-accent-green font-bold tracking-wider uppercase text-sm mb-2 block"
+                    >
+                        Recupera tu inversión hoy
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+                        {ctaSection.title}
+                    </h2>
+                    <p class="text-lg text-brand-400 mb-8 leading-relaxed">
+                        {ctaSection.subtitle}
+                    </p>
+
+                    <ul class="space-y-4 mb-8 text-left inline-block">
+                        <li class="flex items-center gap-3">
+                            <span class="text-gold-500">✓</span>
+                            <span class="text-white/90"
+                                >Sistema completo de branding</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-gold-500">✓</span>
+                            <span class="text-white/90"
+                                >Web y redes sociales listas</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="text-gold-500">✓</span>
+                            <span class="text-white/90"
+                                >Sin contratos forzosos</span
+                            >
+                        </li>
+                    </ul>
+
+                    <div
+                        class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                    >
+                        <a
+                            href={ctaSection.ctaHref}
+                            class="btn-cta text-lg w-full sm:w-auto text-center"
+                            style="background: linear-gradient(135deg, var(--color-gold-500), var(--color-gold-600)); color: black; font-weight: 800;"
+                        >
+                            {ctaSection.cta}
+                        </a>
+                    </div>
+                    <p class="mt-4 text-sm text-brand-600 italic">
+                        {ctaSection.note}
+                    </p>
+                </div>
+
+                <!-- Right Content: Form/Card -->
+                <div class="relative">
+                    <div
+                        class="bg-brand-900/80 p-6 rounded-xl border border-white/10 shadow-2xl"
+                    >
+                        <h3
+                            class="text-xl font-bold text-white mb-4 text-center"
+                        >
+                            Inicia tu transformación
+                        </h3>
+                        <form
+                            class="space-y-4"
+                            onsubmit="event.preventDefault(); window.location.href='https://wa.me/19152955797?text=Quiero%20empezar%20mi%20transformaci%C3%B3n';"
+                        >
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-brand-500 uppercase mb-1"
+                                    >Nombre del Restaurante</label
+                                >
+                                <input
+                                    type="text"
+                                    class="w-full bg-brand-950 border border-brand-800 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:outline-none transition-colors"
+                                    placeholder="Ej. Tacos El Rey"
+                                />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-brand-500 uppercase mb-1"
+                                    >Tu Nombre</label
+                                >
+                                <input
+                                    type="text"
+                                    class="w-full bg-brand-950 border border-brand-800 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:outline-none transition-colors"
+                                    placeholder="Tu nombre completo"
+                                />
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-brand-500 uppercase mb-1"
+                                    >WhatsApp</label
+                                >
+                                <input
+                                    type="tel"
+                                    class="w-full bg-brand-950 border border-brand-800 rounded-lg px-4 py-3 text-white focus:border-gold-500 focus:outline-none transition-colors"
+                                    placeholder="+1 (555) 000-0000"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full bg-gold-500 hover:bg-gold-400 text-black font-bold py-4 rounded-lg shadow-lg shadow-gold-500/20 transition-all transform hover:scale-[1.02]"
+                            >
+                                Solicitar Información →
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

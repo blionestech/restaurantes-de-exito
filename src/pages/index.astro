@@ -1,0 +1,59 @@
+---
+import FunnelLayout from "../layouts/FunnelLayout.astro";
+import Hero from "../components/Hero.astro";
+import StatsBar from "../components/StatsBar.astro";
+import Problem from "../components/Problem.astro";
+import Solution from "../components/Solution.astro";
+import VideoExplainer from "../components/VideoExplainer.astro";
+import ResourcesGrid from "../components/ResourcesGrid.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Expert from "../components/Expert.astro";
+import AudienceFit from "../components/AudienceFit.astro";
+import CTASection from "../components/CTASection.astro";
+import FAQ from "../components/FAQ.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import ExitPopup from "../components/ExitPopup.astro";
+---
+
+<FunnelLayout>
+	<!-- 1. Hero: Hook them immediately -->
+	<Hero />
+
+	<!-- 2. Stats Bar: Social Proof/Authority -->
+	<StatsBar />
+
+	<!-- 3. Problem: Agitate the pain -->
+	<Problem />
+
+	<!-- 4. Solution: Present the answer (ROI System) -->
+	<Solution />
+
+	<!-- 5. Video Explainer: Deep Dive -->
+	<VideoExplainer />
+
+	<!-- 6. Resources: What they get (Caja Fuerte) -->
+	<ResourcesGrid />
+
+	<!-- 7. Testimonials: Social proof -->
+	<Testimonials />
+
+	<!-- 8. Expert: Authority -->
+	<Expert />
+
+	<!-- 9. Audience Fit: Qualify -->
+	<AudienceFit />
+
+	<!-- 10. Final CTA -->
+	<CTASection />
+
+	<!-- 11. FAQ: Handle objections -->
+	<FAQ />
+
+	<!-- 12. Footer -->
+	<Footer />
+
+	<!-- Global elements -->
+	<WhatsAppButton />
+	<ExitPopup />
+</FunnelLayout>

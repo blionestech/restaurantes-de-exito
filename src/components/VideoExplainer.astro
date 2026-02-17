@@ -8,22 +8,22 @@ import { videoExplainer } from "../data/content";
             <!-- Text Content -->
             <div class="animate-fade-in-up">
                 <span
-                    class="text-gold-400 font-bold tracking-wider uppercase text-sm mb-2 block"
+                    class="text-gold-500 font-bold tracking-wider uppercase text-sm mb-2 block"
                 >
                     El Sistema
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-900 mb-6">
                     {videoExplainer.title}
                 </h2>
-                <p class="text-lg text-brand-500 mb-8 leading-relaxed">
+                <p class="text-lg text-brand-600 mb-8 leading-relaxed">
                     {videoExplainer.description}
                 </p>
 
                 <ul class="space-y-4">
                     {
                         videoExplainer.points.map((point) => (
-                            <li class="flex items-center gap-3 text-white/90">
-                                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-gold-500/20 text-gold-400 text-sm">
+                            <li class="flex items-center gap-3 text-brand-700">
+                                <span class="flex items-center justify-center w-6 h-6 rounded-full bg-gold-500/10 text-gold-600 text-sm">
                                     ✓
                                 </span>
                                 {point}

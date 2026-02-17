@@ -2,13 +2,12 @@
 import { footer } from "../data/content";
 ---
 
-<footer class="relative overflow-hidden">
+<footer class="relative overflow-hidden bg-brand-900 text-white">
     <div
         class="absolute top-0 left-0 right-0 h-[2px]"
         style="background: linear-gradient(90deg, #c2703e, #fbbf24, #27ae60, #8e44ad, #f39c12);"
     >
     </div>
-    <div class="absolute inset-0 bg-brand-950"></div>
 
     <div class="relative z-10 container-narrow section-padding py-12 sm:py-16">
         <div class="grid sm:grid-cols-3 gap-8 items-start">
@@ -17,21 +16,21 @@ import { footer } from "../data/content";
                 <p class="text-xl font-heading font-bold text-white mb-1">
                     {footer.brand}
                 </p>
-                <p class="text-sm text-brand-600">{footer.tagline}</p>
+                <p class="text-sm text-brand-400">{footer.tagline}</p>
             </div>
 
             <!-- Contact -->
             <div class="text-center">
-                <p class="text-sm text-brand-600 mb-2">Contacto</p>
+                <p class="text-sm text-brand-400 mb-2">Contacto</p>
                 <a
                     href={`mailto:${footer.contact.email}`}
-                    class="block text-sm text-brand-500 hover:text-gold-400 transition-colors"
+                    class="block text-sm text-brand-300 hover:text-gold-400 transition-colors"
                 >
                     {footer.contact.email}
                 </a>
                 <a
                     href={`tel:${footer.contact.phone.replace(/[\s()-]/g, "")}`}
-                    class="block text-sm text-brand-500 hover:text-gold-400 transition-colors mt-1"
+                    class="block text-sm text-brand-300 hover:text-gold-400 transition-colors mt-1"
                 >
                     {footer.contact.phone}
                 </a>
@@ -44,7 +43,7 @@ import { footer } from "../data/content";
                         footer.links.map((link) => (
                             <a
                                 href={link.href}
-                                class="text-sm text-brand-600 hover:text-gold-400 transition-colors"
+                                class="text-sm text-brand-300 hover:text-gold-400 transition-colors"
                             >
                                 {link.label}
                             </a>
@@ -55,8 +54,8 @@ import { footer } from "../data/content";
         </div>
 
         <!-- Copyright -->
-        <div class="mt-10 pt-6 border-t border-white/5 text-center">
-            <p class="text-xs text-brand-700">{footer.copyright}</p>
+        <div class="mt-10 pt-6 border-t border-white/10 text-center">
+            <p class="text-xs text-brand-500">{footer.copyright}</p>
         </div>
     </div>
 </footer>

@@ -39,11 +39,37 @@ const { title = site.title, description = site.description } = Astro.props;
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  <body>
+  <body class="relative min-h-screen overflow-x-hidden">
+    <!-- Global Background Elements -->
+    <div class="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
+      <!-- Top Right - Terracotta/Gold -->
+      <div
+        class="absolute -top-[10%] -right-[10%] w-[800px] h-[800px] rounded-full blur-3xl opacity-10 animate-pulse-slow"
+        style="background: radial-gradient(circle, var(--color-terracotta), var(--color-gold-500));"
+      >
+      </div>
+
+      <!-- Bottom Left - Avocado/Mango -->
+      <div
+        class="absolute top-[40%] -left-[10%] w-[600px] h-[600px] rounded-full blur-3xl opacity-10"
+        style="background: radial-gradient(circle, var(--color-avocado), var(--color-mango));"
+      >
+      </div>
+
+      <!-- Bottom Right - Gold/Terracotta (for Form area) -->
+      <div
+        class="absolute bottom-[10%] -right-[5%] w-[700px] h-[700px] rounded-full blur-3xl opacity-10"
+        style="background: radial-gradient(circle, var(--color-gold-500), var(--color-terracotta));"
+      >
+      </div>
+    </div>
+
     <slot />
 
     <!-- Sticky Mobile CTA -->
-    <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-brand-950/95 backdrop-blur-md border-t border-gold-400/20 md:hidden">
+    <div
+      class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-brand-950/95 backdrop-blur-md border-t border-gold-400/20 md:hidden"
+    >
       <a href={hero.ctaHref} class="btn-cta w-full text-center text-base">
         {hero.cta}
         <span class="text-xl">→</span>

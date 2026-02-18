@@ -15,7 +15,7 @@ export const hero = {
   cta: "Quiero Mi Paquete Ahora",
   ctaHref: "#cta-final",
   videoId: "dQw4w9WgXcQ",
-  videoThumbnail: "/images/hero-video-thumb.jpg",
+  videoThumbnail: "/images/miniatura_hero.webp",
   benefits: ["40% más ventas", "Ahorra 200h de trabajo", "Lanzamiento en 4 semanas"],
 };
 
@@ -238,21 +238,21 @@ export const testimonials = {
   items: [
     {
       name: "Carlos Mendoza",
-      role: "Dueño de Taquería El Patrón, Houston TX",
+      role: "Dueño de Taquería El Patrón",
       quote:
         "Antes de Bliones, mi restaurante se veía como cualquier otro. Ahora los clientes me dicen que se ve premium. Las ventas subieron un 40% en los primeros 3 meses.",
       rating: 5,
     },
     {
       name: "María Fernández",
-      role: "Fundadora de Sabor Casero, Dallas TX",
+      role: "Fundadora de Sabor Casero",
       quote:
         "Yo no sabía por dónde empezar. El equipo me entregó todo: logo, menús, web, redes... Solo me enfoqué en cocinar. Fue la mejor inversión que hice.",
       rating: 5,
     },
     {
       name: "Jorge Rivera",
-      role: "Dueño de La Parrilla de Jorge, El Paso TX",
+      role: "Dueño de La Parrilla de Jorge",
       quote:
         "Pensé que era caro, pero cuando vi todo lo que incluía me di cuenta que iba a gastar el doble contratando por separado. Súper recomendado.",
       rating: 5,
@@ -358,6 +358,7 @@ export const videoExplainer = {
     "La mayoría de los dueños de restaurantes son esclavos de su negocio. Nosotros te damos la estructura para que tú seas el dueño, no el operador.",
   videoId: "dQw4w9WgXcQ", // Placeholder
   thumbnail: "/images/video-thumbnail.jpg", // Needs generation or placeholder
+  gif: "/Timelapse_effect.gif",
   points: ["Sistematización de procesos", "Marketing automatizado", "Control financiero"],
 };
 
@@ -367,40 +368,40 @@ export const resources = {
   items: [
     {
       title: "Menús de Alta Ingeniería",
-      image: "/images/resource-menu.jpg",
+      image: "/images/resource-menus.webp",
       points: ["Psicología de precios", "Diseño vendedor"],
     },
     {
       title: "Redes Sociales Listas",
-      image: "/images/resource-social.jpg",
+      image: "/images/resource-social.webp",
       points: ["Plantillas editables", "Calendario de contenidos"],
     },
     {
       title: "Manuales Operativos",
-      image: "/images/resource-manuals.jpg",
+      image: "/images/resource-manuals.webp",
       points: ["Estandarización", "Entrenamiento de staff"],
     },
     {
       title: "Sitio Web de Conversión",
-      image: "/images/resource-web.jpg",
+      image: "/images/resource-web.webp",
       points: ["Pedidos en línea", "Reservas automatizadas"],
     },
     {
       title: "Uniformes Premium",
-      image: "/images/resource-uniforms.jpg",
+      image: "/images/resource-uniforms.webp",
       points: ["Identidad de marca", "Tela de alta durabilidad"],
     },
     {
       title: "Estrategia de Lanzamiento",
-      image: "/images/resource-launch.jpg",
+      image: "/images/resource-launch.webp",
       points: ["Guía paso a paso", "Checklist de apertura"],
     },
   ],
 };
 
 export const expert = {
-  name: "Alejandro Velasco",
-  role: "Fundador de Bliones & Consultor Gastronómico",
-  bio: "Con más de 10 años en la industria, he ayudado a abrir más de 50 restaurantes exitosos en 3 países. Mi obsesión es convertir tu pasión por la comida en un negocio rentable y escalable.",
-  image: "/images/expert-profile.jpg", // Needs placeholder
+  name: "Alejandro",
+  role: "Dueño de Casa Luna",
+  bio: "Gracias a Restaurante de Éxito pude cumplir mi sueño de tener mi propio restaurante. Siempre quise que la gente probara mis recetas, y con su ayuda logré crear una marca profesional desde el primer día.",
+  image: "/images/Alejandro.webp",
 };

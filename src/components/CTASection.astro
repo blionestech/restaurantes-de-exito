@@ -54,6 +54,7 @@ import { ctaSection } from "../data/content";
                             href={ctaSection.ctaHref}
                             class="btn-cta text-lg w-full sm:w-auto text-center"
                             style="background: linear-gradient(135deg, var(--color-gold-500), var(--color-gold-600)); color: black; font-weight: 800;"
+                            data-track="cta_section_button_click"
                         >
                             {ctaSection.cta}
                         </a>
@@ -113,6 +114,7 @@ import { ctaSection } from "../data/content";
                             <button
                                 type="submit"
                                 class="w-full bg-gold-500 hover:bg-gold-400 text-black font-bold py-4 rounded-lg shadow-lg shadow-gold-500/20 transition-all transform hover:scale-[1.02]"
+                                data-track="cta_section_form_submit"
                             >
                                 Solicitar Información →
                             </button>

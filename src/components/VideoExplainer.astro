@@ -50,7 +50,10 @@ import { videoExplainer } from "../data/content";
                                 />
                             ) : (
                                 /* Fallback to original video placeholder if no GIF */
-                                <div class="relative w-full h-full group cursor-pointer">
+                                <div
+                                    class="relative w-full h-full group cursor-pointer"
+                                    data-track="video_explainer_play"
+                                >
                                     <div class="absolute inset-0 bg-brand-900 flex items-center justify-center">
                                         <span class="text-brand-600 text-6xl opacity-30">
                                             ▶

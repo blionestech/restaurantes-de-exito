@@ -1,93 +1,122 @@
 ---
-import { valueVsPrice, paymentPlan } from "../data/content";
+import { valueVsPrice } from "../data/content";
 ---
 
-<section class="section-padding relative overflow-hidden" id="precio">
-    <!-- No dark bg -->
-    <!-- No dark bg -->
-    <!-- Local blob removed as it is now global -->
+<section class="relative overflow-hidden py-20 sm:py-28" id="precio">
+    <!-- Dark dramatic background -->
+    <div
+        class="absolute inset-0 bg-gradient-to-b from-brand-900 via-brand-950 to-brand-900"
+    >
+    </div>
+    <!-- Decorative glow -->
+    <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-3xl opacity-20"
+        style="background: radial-gradient(circle, #f35d09, transparent 70%);"
+    >
+    </div>
 
-    <div class="relative z-10 container-narrow">
-        <h2
-            class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 text-center mb-4 animate-fade-in-up"
-        >
-            {valueVsPrice.title}
-        </h2>
-        <hr class="section-divider" />
-
-        <div class="max-w-3xl mx-auto">
-            <div
-                class="glass-card p-10 text-center border-gold-400/30 animate-fade-in-up animate-delay-100"
+    <div class="relative z-10 container-narrow px-6">
+        <!-- Section header -->
+        <div class="text-center mb-12">
+            <span
+                class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider uppercase rounded-full"
+                style="color: #f35d09; background: rgba(243, 93, 9, 0.1); border: 1px solid rgba(243, 93, 9, 0.3);"
             >
-                <!-- Total value -->
-                <p class="text-brand-600 text-lg mb-2">
-                    Valor total de todos los servicios
-                </p>
-                <p
-                    class="text-5xl sm:text-6xl font-black text-brand-200 line-through mb-6"
-                >
-                    {valueVsPrice.totalValue}
-                </p>
+                💰 Oferta Especial
+            </span>
+            <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 animate-fade-in-up"
+            >
+                {valueVsPrice.title}
+            </h2>
+            <div
+                class="w-20 h-1 mx-auto rounded-full"
+                style="background: linear-gradient(90deg, #f35d09, #f30606);"
+            >
+            </div>
+        </div>
 
-                <!-- Final price -->
-                <p class="text-brand-600 text-lg mb-2">Tu inversión hoy</p>
-                <p
-                    class="text-5xl sm:text-7xl font-black gradient-text-warm mb-4"
-                >
-                    {valueVsPrice.finalPrice}
-                </p>
+        <div class="max-w-5xl mx-auto">
+            <div
+                class="rounded-3xl overflow-hidden animate-fade-in-up animate-delay-100 border border-white/10"
+                style="background: rgba(255,255,255,0.05); backdrop-filter: blur(20px);"
+            >
+                <div class="flex flex-col md:flex-row">
+                    {/* Image side */}
+                    <div class="md:w-80 lg:w-96 shrink-0 relative">
+                        <div class="h-72 md:h-full w-full overflow-hidden">
+                            <img
+                                src="/images/branding-package.png"
+                                alt="Tu paquete de inversión"
+                                class="w-full h-full object-cover opacity-80"
+                            />
+                            <!-- Overlay gradient -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-r from-transparent to-brand-950/80 hidden md:block"
+                            >
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-950/80 md:hidden"
+                            >
+                            </div>
+                        </div>
+                    </div>
 
-                <!-- Savings badge -->
-                <div
-                    class="inline-block px-5 py-2 mb-8 rounded-full bg-green-500/10 border border-green-500/30"
-                >
-                    <span class="text-green-600 font-bold">
-                        Ahorras {valueVsPrice.savings} ({
-                            valueVsPrice.savingsPercent
-                        })
-                    </span>
-                </div>
-
-                <!-- Payment Plan - PROMINENT -->
-                <div
-                    class="bg-brand-50 rounded-2xl p-8 mb-8 border border-gold-400/20 shadow-lg shadow-gold-500/5"
-                >
-                    <p
-                        class="text-sm uppercase tracking-wider text-gold-600 font-semibold mb-3"
-                    >
-                        {paymentPlan.title}
-                    </p>
-                    <p
-                        class="text-4xl sm:text-5xl font-black text-brand-900 mb-2"
-                    >
-                        {paymentPlan.firstPayment}
-                    </p>
-                    <p class="text-brand-600 text-lg mb-4">
-                        {paymentPlan.note}
-                    </p>
+                    {/* Pricing content */}
                     <div
-                        class="flex items-center justify-center gap-3 flex-wrap"
+                        class="flex-1 p-8 sm:p-12 text-center flex flex-col justify-center"
                     >
-                        {
-                            paymentPlan.methods.map((method) => (
-                                <span class="px-3 py-1 text-sm bg-white border border-brand-200 rounded-full text-brand-600">
-                                    {method}
-                                </span>
-                            ))
-                        }
+                        <!-- Total value -->
+                        <p class="text-white/60 text-lg mb-2 font-medium">
+                            Valor total de todos los servicios
+                        </p>
+                        <p
+                            class="text-5xl sm:text-6xl font-black text-white/20 line-through mb-8"
+                        >
+                            {valueVsPrice.totalValue}
+                        </p>
+
+                        <!-- Arrow down -->
+                        <div class="text-3xl mb-6 animate-bounce">⬇️</div>
+
+                        <!-- Final price -->
+                        <p class="text-white/60 text-lg mb-3 font-medium">
+                            Tu inversión hoy
+                        </p>
+                        <p
+                            class="text-6xl sm:text-8xl font-black mb-6"
+                            style="background: linear-gradient(135deg, #f35d09, #f30606); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
+                        >
+                            {valueVsPrice.finalPrice}
+                        </p>
+
+                        <!-- Savings badge -->
+                        <div
+                            class="inline-flex items-center justify-center gap-2 px-6 py-3 mb-10 rounded-full"
+                            style="background: rgba(46, 204, 113, 0.15); border: 1px solid rgba(46, 204, 113, 0.3);"
+                        >
+                            <span class="text-xl">🎉</span>
+                            <span class="text-green-400 font-bold text-lg">
+                                Ahorras {valueVsPrice.savings}
+                            </span>
+                        </div>
+
+                        <!-- CTA -->
+                        <a
+                            href={valueVsPrice.ctaHref}
+                            class="inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold text-white rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+                            style="background: linear-gradient(135deg, #f35d09, #f30606); box-shadow: 0 8px 30px rgba(243, 93, 9, 0.5); animation: pulse-glow 2s ease-in-out infinite;"
+                            data-track="value_vs_price_cta_click"
+                        >
+                            {valueVsPrice.cta}
+                            <span class="text-2xl">→</span>
+                        </a>
+
+                        <p class="text-white/40 text-sm mt-4">
+                            Sin compromisos • Respuesta en 24h
+                        </p>
                     </div>
                 </div>
-
-                <!-- CTA -->
-                <a
-                    href={valueVsPrice.ctaHref}
-                    class="btn-cta text-lg"
-                    style="background: linear-gradient(135deg, var(--color-mango), var(--color-terracotta)); box-shadow: 0 4px 20px rgba(243, 156, 18, 0.4); animation: pulse-glow 2s ease-in-out infinite;"
-                    data-track="value_vs_price_cta_click"
-                >
-                    {valueVsPrice.cta}
-                    <span class="text-2xl">→</span>
-                </a>
             </div>
         </div>
     </div>

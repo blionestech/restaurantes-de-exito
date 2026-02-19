@@ -31,7 +31,8 @@ import { faqs } from "../data/content";
                                     {faq.question}
                                 </span>
                                 <span
-                                    class="text-gold-500 text-2xl shrink-0 transition-transform duration-300"
+                                    class="text-2xl shrink-0 transition-transform duration-300"
+                                    style="color: #f35d09;"
                                     :class={`openIndex === ${i} ? 'rotate-45' : ''`}
                                 >
                                     +
@@ -43,7 +44,7 @@ import { faqs } from "../data/content";
                             >
                                 <div class="overflow-hidden">
                                     <div class="px-6 pb-5">
-                                        <div class="w-full h-px bg-gradient-to-r from-gold-400/20 via-gold-400/10 to-transparent mb-4" />
+                                        <div class="w-full h-px mb-4" style="background: linear-gradient(to right, rgba(243, 93, 9, 0.2), rgba(243, 93, 9, 0.1), transparent);" />
                                         <p class="text-brand-600 leading-relaxed">
                                             {faq.answer}
                                         </p>

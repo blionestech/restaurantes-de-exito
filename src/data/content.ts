@@ -11,12 +11,12 @@ export const site = {
 export const hero = {
   headline: "Abre Tu Restaurante con Todo Listo para Triunfar",
   subheadline:
-    "El paquete integral que incluye branding, marketing, impresión, presencia digital, uniformes y formación estratégica. Todo lo que necesitas para lanzar con fuerza.",
+    "Ya sea que estés por abrir tu restaurante o quieras llevar el tuyo al siguiente nivel, este paquete tiene todo lo que necesitas: branding, menús, web, redes sociales, uniformes y más.",
   cta: "Quiero Mi Paquete Ahora",
   ctaHref: "#cta-final",
   videoId: "dQw4w9WgXcQ",
   videoThumbnail: "/images/miniatura_hero.webp",
-  benefits: ["40% más ventas", "Ahorra 200h de trabajo", "Lanzamiento en 4 semanas"],
+  benefits: ["Hasta 40% más ventas", "Imagen profesional desde el día 1", "Todo en un solo paquete"],
 };
 
 export const problems = {
@@ -53,9 +53,9 @@ export const problems = {
 
 export const solution = {
   title: "La Solución: Restaurante de Éxito",
-  subtitle: "Un sistema completo, no servicios separados",
+  subtitle: "Un sistema integral, no servicios separados",
   description:
-    "Restaurante de Éxito es un paquete integral diseñado específicamente para emprendedores de restaurantes. No son servicios sueltos — es un sistema probado que cubre cada área que necesitas para lanzar con fuerza y crecer desde el día uno.",
+    "Restaurante de Éxito es un paquete integral diseñado específicamente para emprendedores de restaurantes. No son servicios sueltos — es un sistema diseñado para cubrir cada área que necesitas para lanzar con fuerza y buscar el crecimiento desde el día uno.",
   points: [
     "Branding profesional que genera confianza",
     "Material impreso listo para usar",
@@ -69,69 +69,48 @@ export const solution = {
 export const packageIncludes = {
   title: "Todo Lo Que Incluye Tu Paquete",
   subtitle: "Cada detalle pensado para que tú solo te enfoques en cocinar",
-  blocks: [
+  categories: [
     {
-      name: "Branding Básico",
-      icon: "✨",
-      value: "$299",
+      name: "Marca e Imagen",
+      icon: "🎨",
       items: [
-        "Logo profesional",
-        "Paleta de colores",
-        "Selección de fuentes",
+        { name: "Branding Básico (Logo, Paleta de colores, Fuentes)", value: "$299" },
       ],
     },
     {
-      name: "Material Impreso",
-      icon: "🖨️",
-      value: "$3,174",
+      name: "Menús e Impresos",
+      icon: "📋",
       items: [
-        "50 menús 003 (6 u 8 vistas)",
-        "1,000 menús to-go medianos",
-        "1,000 flyers promocionales 4”x6”",
-        "Banner “COMING SOON” 3’x4’",
-        "500 Tarjetas de presentación o lealtad",
+        { name: "50 Menús 003 (6 u 8 vistas)", value: "$2,125" },
+        { name: "1,000 Menús To-Go Medianos", value: "$585" },
+        { name: "1,000 Flyers Promocionales 4\"x6\"", value: "$196" },
+        { name: "Banner \"COMING SOON\" 3'x4'", value: "$175" },
+        { name: "500 Tarjetas de Presentación o Lealtad", value: "$93" },
       ],
     },
     {
       name: "Presencia Digital",
       icon: "🌐",
-      value: "$1,487",
       items: [
-        "Página web de éxito",
-        "12 meses de mantenimiento",
-        "Renovación de dominio gratis",
-        "Alojamiento incluido",
-        "Cambios ilimitados",
+        { name: "Página Web de Éxito (12 meses mantenimiento, dominio, hosting, cambios ilimitados)", value: "$1,487" },
+        { name: "3 Meses Redes Sociales FB & IG (perfil, 8 posts/mes, publicidad, segmentación)", value: "$420" },
+        { name: "Código QR Estándar", value: "$100" },
       ],
     },
     {
-      name: "Redes Sociales (3 meses)",
-      icon: "📱",
-      value: "$420",
+      name: "Uniformes",
+      icon: "👕",
       items: [
-        "Creación de perfil de negocio",
-        "8 publicaciones mensuales",
-        "Mayor alcance con publicaciones pagadas",
-        "Segmentación estratégica",
+        { name: "25 Polos Bordadas", value: "$620" },
+        { name: "6 Mandiles Bordados", value: "$98" },
       ],
     },
     {
-      name: "Uniformes y Extras",
-      icon: "🎁",
-      value: "$818",
-      items: [
-        "25 polos bordadas",
-        "6 mandiles bordados",
-        "Código QR Estándar",
-      ],
-    },
-    {
-      name: "Formación Estratégica",
+      name: "Formación",
       icon: "🎓",
-      value: "$1,699",
       items: [
-        "Curso Secretos de la Restaurantería",
-        "Checklist de apertura",
+        { name: "Curso Secretos de la Restaurantería", value: "$1,500" },
+        { name: "Checklist de Apertura", value: "$199" },
       ],
     },
   ],
@@ -143,9 +122,8 @@ export const valueVsPrice = {
   totalValue: "$7,897",
   finalPrice: "$5,000",
   savings: "$2,897",
-  savingsPercent: "37%",
-  cta: "Quiero Empezar Hoy",
-  ctaHref: "#cta-final",
+  cta: "Quiero Mi Paquete",
+  ctaHref: "https://wa.me/19152955797?text=Hola%2C%20me%20interesa%20el%20paquete%20Restaurante%20de%20%C3%89xito",
 };
 
 export const audienceFit = {
@@ -201,7 +179,7 @@ export const faqs = {
     {
       question: "¿Qué pasa después de los 3 meses de redes sociales?",
       answer:
-        "Puedes continuar con nosotros con un plan mensual a precio preferencial, o puedes tomar el control de tus redes con todo el material y la estrategia que te entregamos.",
+        "Puedes continuar con nosotros con un plan mensual, o puedes tomar el control de tus redes con todo el material y la estrategia que te entregamos.",
     },
     {
       question: "¿Trabajan con restaurantes fuera de Estados Unidos?",
@@ -220,8 +198,8 @@ export const footer = {
   brand: "Restaurante de Éxito",
   tagline: "Un producto de Bliones",
   links: [
-    { label: "Política de Privacidad", href: "#" },
-    { label: "Términos de Servicio", href: "#" },
+    { label: "Política de Privacidad", href: "/privacidad" },
+    { label: "Términos de Servicio", href: "/terminos" },
   ],
   contact: {
     email: "info@bliones.com",
@@ -240,7 +218,7 @@ export const testimonials = {
       name: "Carlos Mendoza",
       role: "Dueño de Taquería El Patrón",
       quote:
-        "Antes de Bliones, mi restaurante se veía como cualquier otro. Ahora los clientes me dicen que se ve premium. Las ventas subieron un 40% en los primeros 3 meses.",
+        "Antes de Bliones, mi restaurante se veía como cualquier otro. Ahora los clientes me dicen que se ve premium. Sentimos una mejora notable en ventas desde los primeros meses.",
       rating: 5,
     },
     {
@@ -345,17 +323,17 @@ export const whatsappButton = {
 // ─── NEW STRUCTURE CONTENT ───
 
 export const stats = [
-  { value: "+35%", label: "Incremento en Ventas", icon: "📈" },
-  { value: "2.5x", label: "Retorno de Inversión", icon: "💰" },
-  { value: "-15%", label: "Costos Operativos", icon: "📉" },
-  { value: "+40%", label: "Retención de Clientes", icon: "🤝" },
+  { value: "Hasta +35%", label: "Más Ventas", icon: "📈" },
+  { value: "Hasta 2.5x", label: "Retorno de Inversión", icon: "💰" },
+  { value: "Hasta -15%", label: "en Costos Operativos", icon: "📉" },
+  { value: "Hasta +40%", label: "Retención de Clientes", icon: "🤝" },
 ];
 
 export const videoExplainer = {
   title: "Infraestructura Para Crecer",
-  subtitle: "No es solo un logo bonito. Es un sistema operativo para tu éxito.",
+  subtitle: "No es solo un logo bonito. Es un sistema diseñado para ayudarte a alcanzar el éxito.",
   description:
-    "La mayoría de los dueños de restaurantes son esclavos de su negocio. Nosotros te damos la estructura para que tú seas el dueño, no el operador.",
+    "Muchos dueños de restaurantes se sienten atrapados en la operación diaria. Te ayudamos a crear la estructura para que tú seas el dueño, no el operador.",
   videoId: "dQw4w9WgXcQ", // Placeholder
   thumbnail: "/images/video-thumbnail.jpg", // Needs generation or placeholder
   gif: "/Timelapse_effect.gif",
@@ -376,11 +354,7 @@ export const resources = {
       image: "/images/resource-social.webp",
       points: ["Plantillas editables", "Calendario de contenidos"],
     },
-    {
-      title: "Manuales Operativos",
-      image: "/images/resource-manuals.webp",
-      points: ["Estandarización", "Entrenamiento de staff"],
-    },
+
     {
       title: "Sitio Web de Conversión",
       image: "/images/resource-web.webp",

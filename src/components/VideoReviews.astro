@@ -1,0 +1,272 @@
+---
+// Video reviews marquee - auto-scrolling horizontal video testimonials
+const reviews = [
+    { name: "Review 1", video: "/videos/review-1.mp4" },
+    { name: "Review 2", video: "/videos/review-2.mp4" },
+    { name: "Review 3", video: "/videos/review-3.mp4" },
+    { name: "Review 4", video: "/videos/review-4.mp4" },
+    { name: "Review 5", video: "/videos/review-5.mp4" },
+    { name: "Review 6", video: "/videos/review-6.mp4" },
+];
+---
+
+<section class="section-padding relative overflow-hidden">
+    <div class="relative z-10 container-narrow mb-16">
+        <div class="text-center">
+            <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 mb-4 animate-fade-in-up"
+            >
+                Lo Que Dicen Nuestros Clientes
+            </h2>
+            <hr class="section-divider" />
+            <p class="text-lg text-brand-600 max-w-2xl mx-auto mb-6">
+                Escucha directamente de restauranteros que han trabajado con
+                nosotros
+            </p>
+            <!-- Audio CTA badge -->
+            <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full animate-fade-in-up animate-delay-200"
+                style="background: rgba(243, 93, 9, 0.1); border: 1px solid rgba(243, 93, 9, 0.25);">
+                <span class="text-xl" style="animation: pulse-icon 1.5s ease-in-out infinite;">🔊</span>
+                <span class="text-sm font-semibold" style="color: #f35d09;">
+                    Toca un video para escuchar su historia
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marquee container -->
+    <div class="reviews-marquee-wrapper">
+        <div class="reviews-marquee-track">
+            {/* First set */}
+            {
+                reviews.map((review) => (
+                    <div class="review-card">
+                        <div class="review-video-container">
+                            <video
+                                class="review-video"
+                                playsinline
+                                muted
+                                loop
+                                autoplay
+                                preload="metadata"
+                            >
+                                <source src={review.video} type="video/mp4" />
+                            </video>
+                            <!-- Audio overlay button -->
+                            <div class="review-audio-overlay">
+                                <div class="audio-btn">
+                                    <span class="audio-icon-muted">🔇</span>
+                                    <span class="audio-icon-unmuted" style="display:none;">🔊</span>
+                                </div>
+                                <span class="audio-label">Escuchar</span>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+            {/* Duplicate set for seamless loop */}
+            {
+                reviews.map((review) => (
+                    <div class="review-card">
+                        <div class="review-video-container">
+                            <video
+                                class="review-video"
+                                playsinline
+                                muted
+                                loop
+                                autoplay
+                                preload="metadata"
+                            >
+                                <source src={review.video} type="video/mp4" />
+                            </video>
+                            <!-- Audio overlay button -->
+                            <div class="review-audio-overlay">
+                                <div class="audio-btn">
+                                    <span class="audio-icon-muted">🔇</span>
+                                    <span class="audio-icon-unmuted" style="display:none;">🔊</span>
+                                </div>
+                                <span class="audio-label">Escuchar</span>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .reviews-marquee-wrapper {
+        overflow: hidden;
+        width: 100%;
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 5%,
+            black 95%,
+            transparent
+        );
+        -webkit-mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 5%,
+            black 95%,
+            transparent
+        );
+    }
+
+    .reviews-marquee-track {
+        display: flex;
+        gap: 1.5rem;
+        animation: marquee-scroll 40s linear infinite;
+        width: max-content;
+    }
+
+    .reviews-marquee-wrapper:hover .reviews-marquee-track {
+        animation-play-state: paused;
+    }
+
+    .review-card {
+        flex-shrink: 0;
+        width: 280px;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        background: white;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .review-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .review-video-container {
+        position: relative;
+        aspect-ratio: 9 / 16;
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+        overflow: hidden;
+    }
+
+    .review-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Audio overlay button */
+    .review-audio-overlay {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+
+    .review-card:hover .review-audio-overlay {
+        background: rgba(243, 93, 9, 0.8);
+        border-color: rgba(243, 93, 9, 0.6);
+        transform: translateX(-50%) scale(1.05);
+    }
+
+    .audio-btn {
+        font-size: 1.1rem;
+        line-height: 1;
+    }
+
+    .audio-label {
+        color: white;
+        font-size: 0.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    /* Playing state */
+    .review-card.playing .review-audio-overlay {
+        background: rgba(243, 93, 9, 0.85);
+        border-color: rgba(243, 93, 9, 0.7);
+        box-shadow: 0 0 20px rgba(243, 93, 9, 0.4);
+    }
+
+    @keyframes marquee-scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @keyframes pulse-icon {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+</style>
+
+<script>
+    // Autoplay all videos muted on load
+    document.querySelectorAll(".review-video").forEach((video) => {
+        video.play().catch(() => {});
+    });
+
+    // Click to toggle audio
+    document.querySelectorAll(".review-card").forEach((card) => {
+        const video = card.querySelector("video");
+        if (!video) return;
+
+        card.addEventListener("click", () => {
+            const isPlaying = card.classList.contains("playing");
+
+            // Mute all others first
+            document.querySelectorAll(".review-card").forEach((otherCard) => {
+                const otherVideo = otherCard.querySelector("video");
+                if (otherCard !== card && otherVideo) {
+                    otherVideo.muted = true;
+                    otherCard.classList.remove("playing");
+                    const mutedIcon = otherCard.querySelector(".audio-icon-muted");
+                    const unmutedIcon = otherCard.querySelector(".audio-icon-unmuted");
+                    const label = otherCard.querySelector(".audio-label");
+                    if (mutedIcon) mutedIcon.style.display = "";
+                    if (unmutedIcon) unmutedIcon.style.display = "none";
+                    if (label) label.textContent = "Escuchar";
+                }
+            });
+
+            if (isPlaying) {
+                // Mute this one
+                video.muted = true;
+                card.classList.remove("playing");
+                const mutedIcon = card.querySelector(".audio-icon-muted");
+                const unmutedIcon = card.querySelector(".audio-icon-unmuted");
+                const label = card.querySelector(".audio-label");
+                if (mutedIcon) mutedIcon.style.display = "";
+                if (unmutedIcon) unmutedIcon.style.display = "none";
+                if (label) label.textContent = "Escuchar";
+            } else {
+                // Unmute this one
+                video.muted = false;
+                video.play();
+                card.classList.add("playing");
+                const mutedIcon = card.querySelector(".audio-icon-muted");
+                const unmutedIcon = card.querySelector(".audio-icon-unmuted");
+                const label = card.querySelector(".audio-label");
+                if (mutedIcon) mutedIcon.style.display = "none";
+                if (unmutedIcon) unmutedIcon.style.display = "";
+                if (label) label.textContent = "Reproduciendo";
+            }
+        });
+    });
+</script>

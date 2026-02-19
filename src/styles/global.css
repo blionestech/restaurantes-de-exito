@@ -31,10 +31,10 @@
   --color-accent-red: #e74c3c;
 
   /* ── Latino Vibrant Palette (High Pop) ── */
-  --color-terracotta: #e67e22;
+  --color-terracotta: #f35d09;
   /* Brightened for dark bg */
-  --color-salsa: #e74c3c;
-  /* Vibrant Red */
+  --color-salsa: #f30606;
+  /* Brand Red */
   --color-chile: #ff5252;
   /* Neon Red */
   --color-mango: #f1c40f;
@@ -160,20 +160,20 @@ h6 {
   padding: 1rem 2.5rem;
   font-weight: 700;
   font-size: 1.125rem;
-  color: var(--color-brand-950);
-  background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-500));
+  color: white;
+  background: linear-gradient(135deg, #f35d09, #f30606);
   border-radius: 9999px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.3);
+  box-shadow: 0 4px 20px rgba(243, 93, 9, 0.3);
   cursor: pointer;
   border: none;
 }
 
 .btn-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(251, 191, 36, 0.5);
-  background: linear-gradient(135deg, var(--color-gold-300), var(--color-gold-400));
+  box-shadow: 0 8px 30px rgba(243, 6, 6, 0.4);
+  background: linear-gradient(135deg, #f35d09, #e00505);
 }
 
 .btn-cta:active {
@@ -198,7 +198,7 @@ h6 {
 
 /* ── Gradient Text ── */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-gold-300), var(--color-gold-500));
+  background: linear-gradient(135deg, #f35d09, #f30606);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -208,14 +208,14 @@ h6 {
 .section-divider {
   width: 5rem;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-terracotta), var(--color-gold-400), var(--color-avocado));
+  background: linear-gradient(90deg, #f35d09, #f30606, #f35d09);
   border: none;
   margin: 1.5rem auto;
 }
 
 /* ── Warm Gradient Text ── */
 .gradient-text-warm {
-  background: linear-gradient(135deg, var(--color-terracotta), var(--color-gold-400), var(--color-mango));
+  background: linear-gradient(135deg, #f35d09, #f30606);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -227,11 +227,11 @@ h6 {
 }
 
 .card-accent-1 {
-  border-top-color: var(--color-terracotta);
+  border-top-color: #f35d09;
 }
 
 .card-accent-2 {
-  border-top-color: var(--color-mango);
+  border-top-color: #f30606;
 }
 
 .card-accent-3 {

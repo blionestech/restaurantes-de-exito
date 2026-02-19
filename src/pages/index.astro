@@ -1,15 +1,10 @@
 ---
 import FunnelLayout from "../layouts/FunnelLayout.astro";
 import Hero from "../components/Hero.astro";
-
-import Problem from "../components/Problem.astro";
-import Solution from "../components/Solution.astro";
-import VideoExplainer from "../components/VideoExplainer.astro";
-import ResourcesGrid from "../components/ResourcesGrid.astro";
-import Testimonials from "../components/Testimonials.astro";
-import Expert from "../components/Expert.astro";
-import AudienceFit from "../components/AudienceFit.astro";
-import CTASection from "../components/CTASection.astro";
+import Benefits from "../components/Benefits.astro";
+import PackageIncludes from "../components/PackageIncludes.astro";
+import VideoReviews from "../components/VideoReviews.astro";
+import ValueVsPrice from "../components/ValueVsPrice.astro";
 import FAQ from "../components/FAQ.astro";
 import Footer from "../components/Footer.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
@@ -17,40 +12,30 @@ import ExitPopup from "../components/ExitPopup.astro";
 ---
 
 <FunnelLayout>
-	<!-- 1. Hero: Hook them immediately -->
+	<!-- 1. Hero: Hook + Video + CTA -->
 	<Hero />
 
-	<!-- 3. Problem: Agitate the pain -->
-	<Problem />
+	<!-- 2. Benefits: Short explainer -->
+	<Benefits />
 
-	<!-- 4. Solution: Present the answer (ROI System) -->
-	<Solution />
+	<!-- 3. Package: Everything that's included -->
+	<PackageIncludes />
 
-	<!-- 5. Video Explainer: Deep Dive -->
-	<VideoExplainer />
+	<!-- 4. Video Reviews: Social proof -->
+	<VideoReviews />
 
-	<!-- 6. Resources: What they get (Caja Fuerte) -->
-	<ResourcesGrid />
+	<!-- 5. Value vs Price: Close the deal -->
+	<ValueVsPrice />
 
-	<!-- 7. Testimonials: Social proof -->
-	<Testimonials />
-
-	<!-- 8. Expert: Authority -->
-	<Expert />
-
-	<!-- 9. Audience Fit: Qualify -->
-	<AudienceFit />
-
-	<!-- 10. Final CTA -->
-	<CTASection />
-
-	<!-- 11. FAQ: Handle objections -->
+	<!-- 6. FAQ: Handle objections -->
 	<FAQ />
 
-	<!-- 12. Footer -->
+	<!-- 7. Footer -->
 	<Footer />
 
-	<!-- Global elements -->
+	<!-- WhatsApp button -->
 	<WhatsAppButton />
+
+	<!-- Exit-intent popup for lead capture -->
 	<ExitPopup />
 </FunnelLayout>

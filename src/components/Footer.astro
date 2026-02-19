@@ -12,11 +12,13 @@ import { footer } from "../data/content";
     <div class="relative z-10 container-narrow section-padding py-12 sm:py-16">
         <div class="grid sm:grid-cols-3 gap-8 items-start">
             <!-- Brand -->
-            <div>
+            <div class="text-center sm:text-left">
                 <p class="text-xl font-heading font-bold text-white mb-2">
                     {footer.brand}
                 </p>
-                <div class="flex items-center gap-2 mt-2">
+                <div
+                    class="flex items-center justify-center sm:justify-start gap-2 mt-2"
+                >
                     <img
                         src="/restauranteros-logo-blanco.png"
                         alt="RestauranterosUSA"
@@ -48,8 +50,8 @@ import { footer } from "../data/content";
             </div>
 
             <!-- Links -->
-            <div class="sm:text-right">
-                <div class="flex flex-wrap gap-4 sm:justify-end">
+            <div class="text-center sm:text-right">
+                <div class="flex flex-wrap gap-4 justify-center sm:justify-end">
                     {
                         footer.links.map((link) => (
                             <a

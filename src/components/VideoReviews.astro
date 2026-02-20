@@ -1,34 +1,26 @@
 ---
-// Video reviews marquee - auto-scrolling horizontal video testimonials
-const reviews = [
-    { name: "Review 1", video: "/videos/review-1.mp4" },
-    { name: "Review 2", video: "/videos/review-2.mp4" },
-    { name: "Review 3", video: "/videos/review-3.mp4" },
-    { name: "Review 4", video: "/videos/review-4.mp4" },
-    { name: "Review 5", video: "/videos/review-5.mp4" },
-    { name: "Review 6", video: "/videos/review-6.mp4" },
-];
+import { videoReviews } from "../data/content";
+const reviews = videoReviews.reviews;
 ---
 
 <section class="section-padding relative overflow-hidden">
     <div class="relative z-10 container-narrow mb-16">
         <div class="text-center">
             <h2
-                class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 mb-4 animate-fade-in-up"
+                class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-brand-900 mb-4 animate-fade-in-up"
             >
-                Lo Que Dicen Nuestros Clientes
+                {videoReviews.title}
             </h2>
             <hr class="section-divider" />
             <p class="text-lg text-brand-600 max-w-2xl mx-auto mb-6">
-                Escucha directamente de restauranteros que han trabajado con
-                nosotros
+                {videoReviews.subtitle}
             </p>
             <!-- Audio CTA badge -->
             <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full animate-fade-in-up animate-delay-200"
                 style="background: rgba(243, 93, 9, 0.1); border: 1px solid rgba(243, 93, 9, 0.25);">
                 <span class="text-xl" style="animation: pulse-icon 1.5s ease-in-out infinite;">🔊</span>
                 <span class="text-sm font-semibold" style="color: #f35d09;">
-                    Toca un video para escuchar su historia
+                    {videoReviews.audioCta}
                 </span>
             </div>
         </div>

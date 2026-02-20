@@ -18,14 +18,19 @@ import { valueVsPrice } from "../data/content";
     <div class="relative z-10 container-narrow px-6">
         <!-- Section header -->
         <div class="text-center mb-12">
-            <span
-                class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider uppercase rounded-full"
-                style="color: #f35d09; background: rgba(243, 93, 9, 0.1); border: 1px solid rgba(243, 93, 9, 0.3);"
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border shadow-sm backdrop-blur-sm"
+                style="background: rgba(255, 255, 255, 0.05); border-color: rgba(243, 93, 9, 0.3);"
             >
-                💰 Oferta Especial
-            </span>
+                <span class="text-lg">💰</span>
+                <span
+                    class="text-xs sm:text-sm font-bold tracking-wider uppercase text-white"
+                >
+                    Oferta Especial
+                </span>
+            </div>
             <h2
-                class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 animate-fade-in-up"
+                class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mb-4 animate-fade-in-up"
             >
                 {valueVsPrice.title}
             </h2>

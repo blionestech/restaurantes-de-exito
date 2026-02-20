@@ -1,0 +1,152 @@
+---
+import { successBanner } from "../data/content";
+---
+
+<section
+    class="section-padding relative overflow-hidden flex items-center min-h-[80vh]"
+    id="exito"
+>
+    {/* Dark Background matching brand */}
+    <div class="absolute inset-0 z-0 bg-brand-900">
+        <!-- Image Overlay -->
+        <img
+            src="/images/resource-launch.webp"
+            alt="Fondo de Restaurante"
+            class="w-full h-full object-cover object-center opacity-20 mix-blend-luminosity"
+        />
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-brand-900 via-brand-900/95 to-brand-900/80"
+        >
+        </div>
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-brand-900 via-transparent to-brand-900/50"
+        >
+        </div>
+    </div>
+
+    <div
+        class="relative z-10 container-narrow w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16"
+    >
+        {/* Left Column: Text Content */}
+        <div class="flex-1 text-left animate-fade-in-up">
+            {/* Dark Badge */}
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border mb-8 shadow-sm backdrop-blur-sm"
+                style="background: rgba(255, 255, 255, 0.05); border-color: rgba(243, 93, 9, 0.3);"
+            >
+                <span class="text-xl">🚀</span>
+                <span
+                    class="text-xs sm:text-sm font-bold tracking-wider uppercase text-white"
+                    >Tu Siguiente Nivel</span
+                >
+            </div>
+
+            {/* Using font-bold and font-heading to match other components */}
+            <h2
+                class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-white mb-6 leading-tight"
+            >
+                {successBanner.title}
+                <span
+                    class="block text-transparent bg-clip-text mt-2 pb-1"
+                    style="background-image: linear-gradient(to right, #f35d09, #f30606);"
+                >
+                    {successBanner.highlight}
+                </span>
+            </h2>
+
+            <p
+                class="text-lg sm:text-xl text-white/80 font-medium mb-10 leading-relaxed max-w-2xl"
+            >
+                {successBanner.description}
+            </p>
+
+            <a
+                href={successBanner.ctaHref}
+                class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-white text-lg font-bold transition-all duration-300 group shadow-xl hover:-translate-y-1 hover:shadow-2xl"
+                style="background: linear-gradient(135deg, #f35d09 0%, #d83b00 100%); box-shadow: 0 10px 25px rgba(243, 93, 9, 0.25);"
+            >
+                <span>{successBanner.cta}</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+
+        {/* Right Column: Floating Dark Glass Cards */}
+        <div
+            class="flex-1 relative w-full max-w-lg lg:max-w-none animate-fade-in-up animate-delay-300"
+        >
+            {/* Decorative center glow */}
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-gradient-to-tr from-[#f35d09] to-[#E52E71] rounded-full blur-[100px] opacity-20 z-0 pointer-events-none"
+            >
+            </div>
+
+            <div class="relative z-10 grid gap-6">
+                {/* Main large floating card */}
+                <div
+                    class="p-8 rounded-3xl border border-white/10 shadow-2xl bg-white/5 backdrop-blur-xl transform hover:-translate-y-2 transition-transform duration-500"
+                >
+                    <div
+                        class="w-14 h-14 rounded-2xl flex items-center justify-center text-white text-3xl mb-5 shadow-lg"
+                        style="background: linear-gradient(135deg, #f35d09 0%, #f30606 100%);"
+                    >
+                        {successBanner.cards[0].icon}
+                    </div>
+                    <h4 class="text-2xl font-bold font-heading text-white mb-3">
+                        {successBanner.cards[0].title}
+                    </h4>
+                    <p class="text-white/80 leading-relaxed text-sm">
+                        {successBanner.cards[0].description}
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    {/* Small Card 1 */}
+                    <div
+                        class="p-6 rounded-3xl border border-white/10 shadow-xl bg-white/5 backdrop-blur-xl hover:-translate-y-2 transition-transform duration-500 delay-100"
+                    >
+                        <div class="text-4xl mb-4">
+                            {successBanner.cards[1].icon}
+                        </div>
+                        <h4
+                            class="text-lg font-bold font-heading text-white mb-1"
+                        >
+                            {successBanner.cards[1].title}
+                        </h4>
+                        <p class="text-white/60 text-xs">
+                            {successBanner.cards[1].description}
+                        </p>
+                    </div>
+
+                    {/* Small Card 2 */}
+                    <div
+                        class="p-6 rounded-3xl border border-white/10 shadow-xl bg-white/5 backdrop-blur-xl md:translate-y-8 hover:-translate-y-2 transition-transform duration-500 delay-200"
+                    >
+                        <div class="text-4xl mb-4">
+                            {successBanner.cards[2].icon}
+                        </div>
+                        <h4
+                            class="text-lg font-bold font-heading text-white mb-1"
+                        >
+                            {successBanner.cards[2].title}
+                        </h4>
+                        <p class="text-white/60 text-xs">
+                            {successBanner.cards[2].description}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

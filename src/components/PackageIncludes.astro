@@ -5,7 +5,7 @@ const accentColors = ["#f35d09", "#f30606", "#f35d09", "#f30606", "#f35d09"];
 
 // Sample images from existing repo assets — replace with real images later
 const categoryImages = [
-  "/images/resource-launch.webp",
+  "/images/resource-branding.webp",
   "/images/resource-menus.webp",
   "/images/resource-web.webp",
   "/images/resource-uniforms.webp",
@@ -16,14 +16,20 @@ const categoryImages = [
 <section class="section-padding relative overflow-hidden" id="paquete">
   <div class="relative z-10 container-narrow">
     <div class="text-center mb-16">
-      <span
-        class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wider uppercase rounded-full border"
-        style="color: #f35d09; background: rgba(243, 93, 9, 0.05); border-color: rgba(243, 93, 9, 0.2);"
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border shadow-sm"
+        style="background: rgba(243, 93, 9, 0.05); border-color: rgba(243, 93, 9, 0.25);"
       >
-        El Paquete Completo
-      </span>
+        <span class="text-lg">📦</span>
+        <span
+          class="text-xs sm:text-sm font-bold tracking-wider uppercase"
+          style="color: #f35d09;"
+        >
+          El Paquete Completo
+        </span>
+      </div>
       <h2
-        class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 mb-4"
+        class="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading text-brand-900 mb-4"
       >
         {packageIncludes.title}
       </h2>
@@ -77,10 +83,10 @@ const categoryImages = [
                         </span>
                       </div>
                       <span
-                        style={`color: ${accentColors[catIdx % accentColors.length]};`}
-                        class="font-bold text-sm whitespace-nowrap"
+                        class="px-3 py-1 rounded-full text-xs font-bold whitespace-nowrap"
+                        style={`color: ${accentColors[catIdx % accentColors.length]}; background: ${accentColors[catIdx % accentColors.length]}15;`}
                       >
-                        {item.value}
+                        Valor: {item.value}
                       </span>
                     </div>
                   ))}

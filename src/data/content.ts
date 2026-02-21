@@ -80,7 +80,7 @@ export const valueVsPrice = {
   options: [
     {
       type: "full",
-      title: "Pago de Contado",
+      title: "Pago Unico",
       badge: "Ahorras $500",
       badgeColor: "green",
       price: "$5,000",

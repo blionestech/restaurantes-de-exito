@@ -218,19 +218,15 @@ import { valueVsPrice } from "../data/content";
                     body: JSON.stringify({ type }),
                 });
                 const data = await response.json().catch(() => null);
-                if (!response.ok) {
-                    const message =
-                        data?.details?.errors?.[0]?.detail ||
-                        data?.error ||
-                        "No se pudo iniciar el pago. Intenta de nuevo.";
-                    alert(message);
-                    return;
-                }
-                if (data?.url) {
+                if (data?.ok && data?.url) {
                     window.location.href = data.url;
                     return;
                 }
-                alert("No se pudo iniciar el pago. Intenta de nuevo.");
+                const message =
+                    data?.details?.errors?.[0]?.detail ||
+                    data?.error ||
+                    "No se pudo iniciar el pago. Intenta de nuevo.";
+                alert(message);
             } catch (error) {
                 alert("No se pudo iniciar el pago. Intenta de nuevo.");
             } finally {

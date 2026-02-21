@@ -3,7 +3,7 @@ export const prerender = false;
 const paymentOptions = {
   full: {
     amount: 500000,
-    name: "Paquete Restaurante de Éxito - Pago de contado",
+    name: "Paquete Restaurante de Éxito - Pago Unico",
   },
   reserve: {
     amount: 50000,
@@ -26,7 +26,30 @@ export async function POST({ request }: { request: Request }) {
   }
 
   const option = paymentOptions[type];
-  const response = await fetch(`${baseUrl}/v2/checkout/${locationId}`, {
+  const lineItems = [
+    {
+      name: option.name,
+      quantity: "1",
+      base_price_money: {
+        amount: option.amount,
+        currency: "USD",
+      },
+    },
+  ];
+
+  if (type === "full") {
+    lineItems.push({
+      name: "Costo de envío",
+      quantity: "1",
+      base_price_money: {
+        amount: 9900,
+        currency: "USD",
+      },
+    });
+  }
+  const response = await fetch(
+    `${baseUrl}/v2/online-checkout/payment-links`,
+    {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -35,38 +58,31 @@ export async function POST({ request }: { request: Request }) {
     },
     body: JSON.stringify({
       idempotency_key: crypto.randomUUID(),
-      order: {
-        location_id: locationId,
-        line_items: [
-          {
-            name: option.name,
-            quantity: "1",
-            base_price_money: {
-              amount: option.amount,
-              currency: "USD",
-            },
-          },
-        ],
-      },
+        order: {
+          location_id: locationId,
+          line_items: lineItems,
+        },
     }),
-  });
+    },
+  );
 
   if (!response.ok) {
     const errorBody = await response.json().catch(() => null);
     return new Response(
       JSON.stringify({
+        ok: false,
         error: "Error creando el checkout",
         details: errorBody,
+        status: response.status,
       }),
       {
-        status: response.status,
         headers: { "content-type": "application/json" },
       },
     );
   }
 
   const data = await response.json();
-  const url = data?.checkout?.checkout_page_url;
+  const url = data?.payment_link?.url;
 
   if (!url) {
     return new Response(JSON.stringify({ error: "Checkout inválido" }), {
@@ -75,7 +91,7 @@ export async function POST({ request }: { request: Request }) {
     });
   }
 
-  return new Response(JSON.stringify({ url }), {
+  return new Response(JSON.stringify({ ok: true, url }), {
     headers: { "content-type": "application/json" },
   });
 }

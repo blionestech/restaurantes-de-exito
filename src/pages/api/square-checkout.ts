@@ -1,3 +1,5 @@
+import type { APIContext } from "astro";
+
 export const prerender = false;
 
 const paymentOptions = {
@@ -11,12 +13,16 @@ const paymentOptions = {
   },
 };
 
-export async function POST({ request }: { request: Request }) {
+export async function POST({ request, locals }: APIContext) {
   const body = await request.json().catch(() => ({}));
   const type = body?.type === "reserve" ? "reserve" : "full";
-  const accessToken = import.meta.env.SQUARE_ACCESS_TOKEN;
-  const locationId = import.meta.env.SQUARE_LOCATION_ID;
-  const baseUrl = import.meta.env.SQUARE_BASE_URL;
+  const runtimeEnv = (locals as any)?.runtime?.env;
+  const accessToken =
+    runtimeEnv?.SQUARE_ACCESS_TOKEN ?? import.meta.env.SQUARE_ACCESS_TOKEN;
+  const locationId =
+    runtimeEnv?.SQUARE_LOCATION_ID ?? import.meta.env.SQUARE_LOCATION_ID;
+  const baseUrl =
+    runtimeEnv?.SQUARE_BASE_URL ?? import.meta.env.SQUARE_BASE_URL;
 
   const missing = [];
   if (!accessToken) missing.push("SQUARE_ACCESS_TOKEN");

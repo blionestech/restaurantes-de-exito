@@ -222,7 +222,11 @@ import { valueVsPrice } from "../data/content";
                     window.location.href = data.url;
                     return;
                 }
+                const missing = Array.isArray(data?.missing)
+                    ? `Faltan: ${data.missing.join(", ")}`
+                    : null;
                 const message =
+                    missing ||
                     data?.details?.errors?.[0]?.detail ||
                     data?.error ||
                     "No se pudo iniciar el pago. Intenta de nuevo.";

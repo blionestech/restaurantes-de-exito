@@ -18,11 +18,22 @@ export async function POST({ request }: { request: Request }) {
   const locationId = import.meta.env.SQUARE_LOCATION_ID;
   const baseUrl = import.meta.env.SQUARE_BASE_URL;
 
-  if (!accessToken || !locationId || !baseUrl) {
-    return new Response(JSON.stringify({ error: "Square no configurado" }), {
-      status: 500,
-      headers: { "content-type": "application/json" },
-    });
+  const missing = [];
+  if (!accessToken) missing.push("SQUARE_ACCESS_TOKEN");
+  if (!locationId) missing.push("SQUARE_LOCATION_ID");
+  if (!baseUrl) missing.push("SQUARE_BASE_URL");
+
+  if (missing.length > 0) {
+    return new Response(
+      JSON.stringify({
+        ok: false,
+        error: "Square no configurado",
+        missing,
+      }),
+      {
+        headers: { "content-type": "application/json" },
+      },
+    );
   }
 
   const option = paymentOptions[type];
@@ -85,10 +96,12 @@ export async function POST({ request }: { request: Request }) {
   const url = data?.payment_link?.url;
 
   if (!url) {
-    return new Response(JSON.stringify({ error: "Checkout inválido" }), {
-      status: 500,
-      headers: { "content-type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({ ok: false, error: "Checkout inválido" }),
+      {
+        headers: { "content-type": "application/json" },
+      },
+    );
   }
 
   return new Response(JSON.stringify({ ok: true, url }), {

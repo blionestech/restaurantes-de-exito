@@ -91,7 +91,8 @@ export const valueVsPrice = {
         "Prioridad de inicio inmediata"
       ],
       cta: "Estoy listo para el éxito",
-      ctaHref: "https://wa.me/14234246674?text=Hola%2C%20me%20interesa%20el%20paquete%20Restaurante%20de%20%C3%89xito%20pagando%20de%20contado",
+      checkoutType: "full",
+      ctaHref: "#",
     },
     {
       type: "reserve",
@@ -106,7 +107,8 @@ export const valueVsPrice = {
         "Ideal para asegurar tu lugar hoy"
       ],
       cta: "Quiero apartar mi paquete",
-      ctaHref: "https://wa.me/14234246674?text=Hola%2C%20me%20interesa%20reservar%20el%20paquete%20Restaurante%20de%20%C3%89xito%20por%20500",
+      checkoutType: "reserve",
+      ctaHref: "#",
     }
   ]
 };

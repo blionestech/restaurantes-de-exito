@@ -178,6 +178,7 @@ import { valueVsPrice } from "../data/content";
 
                                                 <a
                                                     href={option.ctaHref}
+                                                    data-checkout-type={option.checkoutType}
                                                     class={`block w-full text-center py-3.5 px-4 rounded-xl font-bold text-white transition-all`}
                                                     style={
                                                         option.type === "full"
@@ -202,4 +203,39 @@ import { valueVsPrice } from "../data/content";
             </div>
         </div>
     </div>
+    <script is:inline>
+        document.addEventListener("click", async (event) => {
+            const target = event.target.closest("a[data-checkout-type]");
+            if (!target) return;
+            event.preventDefault();
+            const type = target.getAttribute("data-checkout-type");
+            if (!type) return;
+            try {
+                target.setAttribute("aria-busy", "true");
+                const response = await fetch("/api/square-checkout", {
+                    method: "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({ type }),
+                });
+                const data = await response.json().catch(() => null);
+                if (!response.ok) {
+                    const message =
+                        data?.details?.errors?.[0]?.detail ||
+                        data?.error ||
+                        "No se pudo iniciar el pago. Intenta de nuevo.";
+                    alert(message);
+                    return;
+                }
+                if (data?.url) {
+                    window.location.href = data.url;
+                    return;
+                }
+                alert("No se pudo iniciar el pago. Intenta de nuevo.");
+            } catch (error) {
+                alert("No se pudo iniciar el pago. Intenta de nuevo.");
+            } finally {
+                target.removeAttribute("aria-busy");
+            }
+        });
+    </script>
 </section>

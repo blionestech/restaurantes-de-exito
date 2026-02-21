@@ -84,40 +84,117 @@ import { valueVsPrice } from "../data/content";
                         <!-- Arrow down -->
                         <div class="text-3xl mb-6 animate-bounce">⬇️</div>
 
-                        <!-- Final price -->
-                        <p class="text-white/60 text-lg mb-3 font-medium">
-                            Tu inversión hoy
-                        </p>
-                        <p
-                            class="text-6xl sm:text-8xl font-black mb-6"
-                            style="background: linear-gradient(135deg, #f35d09, #f30606); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
-                        >
-                            {valueVsPrice.finalPrice}
-                        </p>
-
                         <!-- Savings badge -->
                         <div
-                            class="inline-flex items-center justify-center gap-2 px-6 py-3 mb-10 rounded-full"
+                            class="inline-flex items-center justify-center gap-2 px-6 py-3 mb-10 rounded-full mx-auto"
                             style="background: rgba(46, 204, 113, 0.15); border: 1px solid rgba(46, 204, 113, 0.3);"
                         >
-                            <span class="text-xl">🎉</span>
-                            <span class="text-green-400 font-bold text-lg">
-                                Ahorras {valueVsPrice.savings}
+                            <span class="text-xl">🔥</span>
+                            <span
+                                class="text-green-400 font-bold text-lg sm:text-xl"
+                            >
+                                {valueVsPrice.savings}
                             </span>
                         </div>
 
-                        <!-- CTA -->
-                        <a
-                            href={valueVsPrice.ctaHref}
-                            class="inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-bold text-white rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
-                            style="background: linear-gradient(135deg, #f35d09, #f30606); box-shadow: 0 8px 30px rgba(243, 93, 9, 0.5); animation: pulse-glow 2s ease-in-out infinite;"
-                            data-track="value_vs_price_cta_click"
-                        >
-                            {valueVsPrice.cta}
-                            <span class="text-2xl">→</span>
-                        </a>
+                        <!-- Urgency Banner -->
+                        {
+                            valueVsPrice.urgencyMessage && (
+                                <div class="mb-8 w-full animate-fade-in-up">
+                                    <div class="inline-flex items-center gap-2 px-4 py-2 sm:px-6 sm:py-3 rounded-xl bg-orange-500/10 border border-orange-500/30 text-orange-400">
+                                        <span class="text-xl animate-pulse">
+                                            ⏰
+                                        </span>
+                                        <span class="text-sm sm:text-base font-bold uppercase tracking-wide">
+                                            {valueVsPrice.urgencyMessage}
+                                        </span>
+                                    </div>
+                                </div>
+                            )
+                        }
 
-                        <p class="text-white/40 text-sm mt-4">
+                        <!-- Payment Options Grid -->
+                        <div class="w-full">
+                            <h3
+                                class="text-2xl font-bold text-white mb-6 animate-fade-in-up"
+                            >
+                                {valueVsPrice.optionsTitle}
+                            </h3>
+                            <div
+                                class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left"
+                            >
+                                {
+                                    valueVsPrice.options.map(
+                                        (option, index) => (
+                                            <div
+                                                class={`relative rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${option.type === "full" ? "border-brand-500 bg-brand-900/50" : "border-white/10 bg-white/5"}`}
+                                                style={
+                                                    option.type === "full"
+                                                        ? "box-shadow: 0 0 20px rgba(243, 93, 9, 0.15);"
+                                                        : ""
+                                                }
+                                            >
+                                                {/* Badge */}
+                                                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                                                    <span
+                                                        class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full text-white whitespace-nowrap"
+                                                        style={`background: ${option.badgeColor === "green" ? "#2ecc71" : "#f39c12"}; box-shadow: 0 2px 10px rgba(0,0,0,0.2);`}
+                                                    >
+                                                        {option.badge}
+                                                    </span>
+                                                </div>
+
+                                                <h4 class="text-xl font-bold text-white mt-2 mb-1 text-center">
+                                                    {option.title}
+                                                </h4>
+                                                <p
+                                                    class="text-3xl font-black text-center mb-1"
+                                                    style={
+                                                        option.type === "full"
+                                                            ? "color: #f35d09;"
+                                                            : "color: white;"
+                                                    }
+                                                >
+                                                    {option.price}
+                                                </p>
+                                                <p class="text-white/60 text-sm text-center mb-6 h-10">
+                                                    {option.subtitle}
+                                                </p>
+
+                                                <ul class="space-y-3 mb-8">
+                                                    {option.features.map(
+                                                        (feature) => (
+                                                            <li class="flex items-start gap-2 text-sm text-white/80">
+                                                                <span class="text-brand-500 shrink-0 mt-0.5">
+                                                                    ✓
+                                                                </span>
+                                                                <span>
+                                                                    {feature}
+                                                                </span>
+                                                            </li>
+                                                        ),
+                                                    )}
+                                                </ul>
+
+                                                <a
+                                                    href={option.ctaHref}
+                                                    class={`block w-full text-center py-3.5 px-4 rounded-xl font-bold text-white transition-all`}
+                                                    style={
+                                                        option.type === "full"
+                                                            ? "background: linear-gradient(135deg, #f35d09, #f30606); box-shadow: 0 4px 15px rgba(243, 93, 9, 0.4);"
+                                                            : "background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); hover:background: rgba(255,255,255,0.2);"
+                                                    }
+                                                >
+                                                    {option.cta}
+                                                </a>
+                                            </div>
+                                        ),
+                                    )
+                                }
+                            </div>
+                        </div>
+
+                        <p class="text-white/40 text-sm mt-8 text-center">
                             Sin compromisos • Respuesta en 24h
                         </p>
                     </div>

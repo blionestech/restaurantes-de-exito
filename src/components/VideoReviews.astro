@@ -114,7 +114,8 @@ const reviews = videoReviews.reviews;
         width: max-content;
     }
 
-    .reviews-marquee-wrapper:hover .reviews-marquee-track {
+    .reviews-marquee-wrapper:hover .reviews-marquee-track,
+    .reviews-marquee-track.is-paused {
         animation-play-state: paused;
     }
 
@@ -210,27 +211,29 @@ const reviews = videoReviews.reviews;
 
 <script>
     // Autoplay all videos muted on load
-    document.querySelectorAll(".review-video").forEach((video) => {
+    document.querySelectorAll<HTMLVideoElement>(".review-video").forEach((video) => {
         video.play().catch(() => {});
     });
 
+    const track = document.querySelector<HTMLElement>(".reviews-marquee-track");
+
     // Click to toggle audio
-    document.querySelectorAll(".review-card").forEach((card) => {
-        const video = card.querySelector("video");
+    document.querySelectorAll<HTMLElement>(".review-card").forEach((card) => {
+        const video = card.querySelector<HTMLVideoElement>("video");
         if (!video) return;
 
         card.addEventListener("click", () => {
             const isPlaying = card.classList.contains("playing");
 
             // Mute all others first
-            document.querySelectorAll(".review-card").forEach((otherCard) => {
-                const otherVideo = otherCard.querySelector("video");
+            document.querySelectorAll<HTMLElement>(".review-card").forEach((otherCard) => {
+                const otherVideo = otherCard.querySelector<HTMLVideoElement>("video");
                 if (otherCard !== card && otherVideo) {
                     otherVideo.muted = true;
                     otherCard.classList.remove("playing");
-                    const mutedIcon = otherCard.querySelector(".audio-icon-muted");
-                    const unmutedIcon = otherCard.querySelector(".audio-icon-unmuted");
-                    const label = otherCard.querySelector(".audio-label");
+                    const mutedIcon = otherCard.querySelector<HTMLElement>(".audio-icon-muted");
+                    const unmutedIcon = otherCard.querySelector<HTMLElement>(".audio-icon-unmuted");
+                    const label = otherCard.querySelector<HTMLElement>(".audio-label");
                     if (mutedIcon) mutedIcon.style.display = "";
                     if (unmutedIcon) unmutedIcon.style.display = "none";
                     if (label) label.textContent = "Escuchar";
@@ -241,23 +244,34 @@ const reviews = videoReviews.reviews;
                 // Mute this one
                 video.muted = true;
                 card.classList.remove("playing");
-                const mutedIcon = card.querySelector(".audio-icon-muted");
-                const unmutedIcon = card.querySelector(".audio-icon-unmuted");
-                const label = card.querySelector(".audio-label");
+                const mutedIcon = card.querySelector<HTMLElement>(".audio-icon-muted");
+                const unmutedIcon = card.querySelector<HTMLElement>(".audio-icon-unmuted");
+                const label = card.querySelector<HTMLElement>(".audio-label");
                 if (mutedIcon) mutedIcon.style.display = "";
                 if (unmutedIcon) unmutedIcon.style.display = "none";
                 if (label) label.textContent = "Escuchar";
+                
+                // Unpause the carousel
+                if (track) track.classList.remove("is-paused");
             } else {
                 // Unmute this one
                 video.muted = false;
                 video.play();
                 card.classList.add("playing");
-                const mutedIcon = card.querySelector(".audio-icon-muted");
-                const unmutedIcon = card.querySelector(".audio-icon-unmuted");
-                const label = card.querySelector(".audio-label");
+                const mutedIcon = card.querySelector<HTMLElement>(".audio-icon-muted");
+                const unmutedIcon = card.querySelector<HTMLElement>(".audio-icon-unmuted");
+                const label = card.querySelector<HTMLElement>(".audio-label");
                 if (mutedIcon) mutedIcon.style.display = "none";
                 if (unmutedIcon) unmutedIcon.style.display = "";
                 if (label) label.textContent = "Reproduciendo";
+                
+                // Pause the carousel
+                if (track) track.classList.add("is-paused");
+                
+                // On mobile, center the clicked card smoothly
+                if (window.innerWidth < 768) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+                }
             }
         });
     });

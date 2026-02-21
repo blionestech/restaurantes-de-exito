@@ -74,9 +74,41 @@ export const valueVsPrice = {
   title: "El Valor Real de Tu Inversión",
   totalValue: "$7,897",
   finalPrice: "$5,000",
-  savings: "$2,897",
-  cta: "Quiero Mi Paquete",
-  ctaHref: "https://wa.me/14234246674?text=Hola%2C%20me%20interesa%20el%20paquete%20Restaurante%20de%20%C3%89xito",
+  savings: "Pero hoy tú ahorras $2,897 USD",
+  urgencyMessage: "Oferta por tiempo limitado - Solo 30 paquetes disponibles",
+  optionsTitle: "Opciones de Pago Flexibles",
+  options: [
+    {
+      type: "full",
+      title: "Pago de Contado",
+      badge: "Ahorras $500",
+      badgeColor: "green",
+      price: "$5,000",
+      subtitle: "La opción más inteligente.",
+      features: [
+        "Un solo pago, sin preocupaciones",
+        "Ahorras $500 USD adicionales",
+        "Prioridad de inicio inmediata"
+      ],
+      cta: "Estoy listo para el éxito",
+      ctaHref: "https://wa.me/14234246674?text=Hola%2C%20me%20interesa%20el%20paquete%20Restaurante%20de%20%C3%89xito%20pagando%20de%20contado",
+    },
+    {
+      type: "reserve",
+      title: "Reserva Tu Paquete",
+      badge: "Flexible",
+      badgeColor: "orange",
+      price: "$500",
+      subtitle: "Costo total final: $5,500 USD.",
+      features: [
+        "Aparta tu paquete con solo $500",
+        "El resto lo puedes liquidar después",
+        "Ideal para asegurar tu lugar hoy"
+      ],
+      cta: "Quiero apartar mi paquete",
+      ctaHref: "https://wa.me/14234246674?text=Hola%2C%20me%20interesa%20reservar%20el%20paquete%20Restaurante%20de%20%C3%89xito%20por%20500",
+    }
+  ]
 };
 
 export const faqs = {
@@ -132,9 +164,9 @@ export const footer = {
 export const exitPopup = {
   title: "¡Espera! No Te Vayas Sin Tu Regalo",
   description:
-    "Descarga gratis nuestro Checklist de Apertura de Restaurante — la guía que usan los profesionales.",
-  cta: "Descargar Checklist Gratis",
-  ctaHref: "#cta-final",
+    "Solicita totalmente gratis nuestro Checklist de Apertura de Restaurante — la guía que usan los profesionales.",
+  cta: "Solicita gratis checklist",
+  ctaHref: "https://wa.me/14234246674?text=Hola%2C%20me%20interesa%20solicitar%20el%20Checklist%20gratis",
   note: "Sin spam. Solo valor para tu negocio.",
 };
 

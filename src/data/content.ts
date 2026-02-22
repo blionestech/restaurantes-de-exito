@@ -5,7 +5,7 @@ export const site = {
   description:
     "Paquete integral para abrir o profesionalizar tu restaurante. Branding, marketing, impresión, presencia digital, uniformes y formación estratégica por solo $5,000 USD.",
   ogImage: "/og-image.jpg",
-  url: "https://restaurantedeexito.com",
+  url: "https://paquete.restauranterosusa.com/",
 };
 
 export const hero = {

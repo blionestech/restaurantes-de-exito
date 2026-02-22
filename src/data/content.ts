@@ -4,8 +4,8 @@ export const site = {
   title: "Restaurante de Éxito | Paquete Integral para Tu Restaurante",
   description:
     "Paquete integral para abrir o profesionalizar tu restaurante. Branding, marketing, impresión, presencia digital, uniformes y formación estratégica por solo $5,000 USD.",
-  ogImage: "/images/miniatura_hero.webp",
-  url: "https://paquete.restauranterosusa.com/",
+  ogImage: "/images/miniatura_hero.jpg?v=1",
+  url: "https://paquete.restauranterosusa.com",
 };
 
 export const hero = {

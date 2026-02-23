@@ -60,26 +60,36 @@ import { successBanner } from "../data/content";
                 {successBanner.description}
             </p>
 
-            <a
-                href={successBanner.ctaHref}
-                class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-white text-lg font-bold transition-all duration-300 group shadow-xl hover:-translate-y-1 hover:shadow-2xl"
-                style="background: linear-gradient(135deg, #f35d09 0%, #d83b00 100%); box-shadow: 0 10px 25px rgba(243, 93, 9, 0.25);"
-            >
-                <span>{successBanner.cta}</span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a
+                    href="#precio"
+                    class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-white text-lg font-bold transition-all duration-300 group shadow-xl hover:-translate-y-1 hover:shadow-2xl"
+                    style="background: linear-gradient(135deg, #f35d09 0%, #d83b00 100%); box-shadow: 0 10px 25px rgba(243, 93, 9, 0.25);"
+                    data-track="success_cta_click"
                 >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-            </a>
+                    <span>Estoy listo para el éxito</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6 group-hover:translate-x-1 transition-transform"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+                <a
+                    href={successBanner.ctaHref}
+                    class="btn-secondary-dark text-lg"
+                    data-track="success_secondary_cta_click"
+                >
+                    {successBanner.cta} →
+                </a>
+            </div>
         </div>
 
         {/* Right Column: Floating Dark Glass Cards */}

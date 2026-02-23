@@ -180,6 +180,64 @@ h6 {
   transform: translateY(0);
 }
 
+/* ── Secondary CTA Button Styles ── */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--color-brand-900);
+  background: white;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-terracotta);
+  color: var(--color-terracotta);
+  box-shadow: 0 4px 15px rgba(243, 93, 9, 0.1);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary-dark:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary-dark:active {
+  transform: translateY(0);
+}
+
 /* ── Glass Card ── */
 .glass-card {
   background: rgba(255, 255, 255, 1);

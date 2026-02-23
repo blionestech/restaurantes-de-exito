@@ -99,14 +99,23 @@ const categoryImages = [
     </div>
 
     <div class="text-center animate-fade-in-up animate-delay-600">
-      <a
-        href="#precio"
-        class="btn-cta text-lg shadow-xl"
-        data-track="package_includes_cta_click"
-      >
-        Ver el Precio del Paquete →
-      </a>
-      <p class="mt-4 text-sm text-brand-500 font-medium">
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="#precio"
+          class="btn-cta text-lg shadow-xl"
+          data-track="package_includes_cta_click"
+        >
+          Estoy listo para el éxito →
+        </a>
+        <a
+          href="#precio"
+          class="btn-secondary text-lg"
+          data-track="package_includes_secondary_cta_click"
+        >
+          Ver el Precio del Paquete
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-brand-500 font-medium">
         {packageIncludes.shippingNote}
       </p>
     </div>

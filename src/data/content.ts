@@ -119,7 +119,7 @@ export const faqs = {
     {
       question: "¿El paquete incluye todo o hay costos ocultos?",
       answer:
-        "Todo lo que ves listado está incluido en los $5,000 USD. El único costo adicional es el envío de $99. No hay costos ocultos ni sorpresas.",
+        "Todo lo que ves listado está incluido en los $5,000 USD. El único costo adicional es el envío de $99. No hay costos ocultos ni sorpresas. También puedes apartar tu paquete con $500 USD hoy mismo; en este caso, el costo total será de $5,500 USD más el envío de $99.",
     },
     {
       question: "¿Puedo personalizar lo que incluye el paquete?",
@@ -144,7 +144,7 @@ export const faqs = {
     {
       question: "¿Cómo es el proceso de pago?",
       answer:
-        "Al contactarnos, te explicamos las opciones de pago disponibles y armamos un plan que se ajuste a ti. Escríbenos por WhatsApp para conocer los detalles.",
+        "Aquí puedes hacer el pago directamente en la página o tenemos otros métodos para tu comodidad: Tarjeta, Cheques, Zelle o Cash App. Escríbenos si prefieres alguna de estas opciones.",
     },
   ],
 };

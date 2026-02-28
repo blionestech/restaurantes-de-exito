@@ -15,7 +15,7 @@ export const hero = {
   cta: "Quiero Mi Paquete Ahora",
   ctaHref: "#cta-final",
   videoId: "dQw4w9WgXcQ",
-  videoThumbnail: "/images/miniatura_hero.webp",
+  videoThumbnail: "/images/miniatura_02.png",
   benefits: ["Hasta 40% más ventas", "Imagen profesional desde el día 1", "Todo en un solo paquete"],
 };
 

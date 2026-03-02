@@ -41,6 +41,9 @@ import { hero } from "../data/content";
                             class="w-full h-full object-cover"
                             poster={hero.videoThumbnail}
                             controls
+                            autoplay
+                            muted
+                            loop
                             playsinline
                         >
                             <source
@@ -84,17 +87,21 @@ import { hero } from "../data/content";
 
             <!-- Headline -->
             <h1
-                class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight mb-6 animate-fade-in-up animate-delay-100 max-w-5xl"
+                class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 animate-fade-in-up animate-delay-100 max-w-5xl"
             >
                 <span class="text-brand-900 block mb-2"
-                    >Todo Lo Que Necesitas</span
+                    >Abre Tu Restaurante</span
                 >
                 <span
                     class="text-transparent bg-clip-text"
                     style="background: linear-gradient(to right, #f35d09, #f30606); -webkit-background-clip: text; background-clip: text;"
                 >
-                    Para Tu Restaurante
+                    Como Un Profesional
                 </span>
+                <span
+                    class="block text-2xl sm:text-3xl lg:text-4xl mt-3 text-brand-800"
+                    >— Sin Perder Tiempo ni Dinero en el Intento</span
+                >
             </h1>
 
             <!-- Subheadline -->
@@ -124,24 +131,50 @@ import { hero } from "../data/content";
 
             <!-- CTA -->
             <div
-                class="animate-fade-in-up animate-delay-300 flex flex-col sm:flex-row justify-center gap-4"
+                class="animate-fade-in-up animate-delay-300 flex flex-col items-center gap-4"
             >
                 <a
                     href="#precio"
-                    class="btn-cta text-lg shadow-xl shadow-orange-500/20 hover:shadow-orange-500/30 transform hover:-translate-y-1 transition-all duration-300"
+                    class="btn-cta text-lg shadow-xl shadow-orange-500/20 hover:shadow-orange-500/30 transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto text-center"
                     data-track="hero_cta_click"
                 >
                     Estoy listo para el éxito
                     <span class="ml-2">→</span>
                 </a>
-                <a
-                    href="#paquete"
-                    class="btn-secondary text-lg"
-                    data-track="hero_secondary_cta_click"
+
+                <p
+                    class="text-brand-700 font-semibold text-sm sm:text-base mb-1"
                 >
-                    Ver Qué Incluye el Paquete
-                    <span class="ml-2">↓</span>
-                </a>
+                    Inversión de $5000 USD — Todo incluido <span
+                        class="text-brand-500 text-xs">(+$99 envío)</span
+                    >
+                </p>
+
+                <p
+                    class="text-brand-600 font-medium text-xs sm:text-sm bg-brand-50/50 px-4 py-1.5 rounded-full border border-brand-100 flex items-center gap-2"
+                >
+                    🍽️ Más de 200 restauranteros en EE.UU. ya confían en
+                    nosotros
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-3 items-center mt-2">
+                    <a
+                        href="#paquete"
+                        class="text-brand-500 hover:text-brand-800 text-xs sm:text-sm font-medium underline underline-offset-4 transition-colors"
+                        data-track="hero_secondary_cta_click"
+                    >
+                        Ver Qué Incluye el Paquete
+                    </a>
+                    <span class="hidden sm:inline text-brand-300">•</span>
+                    <a
+                        href="#reviews"
+                        class="text-brand-500 hover:text-brand-800 text-xs sm:text-sm font-medium underline underline-offset-4 transition-colors flex items-center gap-1"
+                        data-track="hero_reviews_cta_click"
+                    >
+                        <span class="text-lg leading-none">▶️</span>
+                        Mira Lo Que Dicen Nuestros Clientes
+                    </a>
+                </div>
             </div>
         </div>
     </div>

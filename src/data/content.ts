@@ -257,11 +257,11 @@ export const videoReviews = {
     "Escucha directamente de restauranteros que han trabajado con nosotros",
   audioCta: "Toca un video para escuchar su historia",
   reviews: [
-    { name: "Review 1", video: "/videos/review-1.mp4" },
-    { name: "Review 2", video: "/videos/review-2.mp4" },
-    { name: "Review 3", video: "/videos/review-3.mp4" },
-    { name: "Review 4", video: "/videos/review-4.mp4" },
-    { name: "Review 5", video: "/videos/review-5.mp4" },
-    { name: "Review 6", video: "/videos/review-6.mp4" },
+    { name: "Alejandro M.", location: "Texas", restaurant: "Taquería El Rey", thumbnail: "/images/Alejandro.webp", video: "/videos/review-1.mp4" },
+    { name: "María P.", location: "Florida", restaurant: "Sabor Latino", thumbnail: "/images/miniatura_hero.jpg", video: "/videos/review-2.mp4" },
+    { name: "Jorge T.", location: "California", restaurant: "La Parrilla", thumbnail: "/images/Alejandro.webp", video: "/videos/review-3.mp4" },
+    { name: "Ana R.", location: "New York", restaurant: "Rincón Colombiano", thumbnail: "/images/miniatura_hero.jpg", video: "/videos/review-4.mp4" },
+    { name: "Luis G.", location: "Illinois", restaurant: "Antojitos Mexicanos", thumbnail: "/images/Alejandro.webp", video: "/videos/review-5.mp4" },
+    { name: "Elena S.", location: "Texas", restaurant: "Pupusería", thumbnail: "/images/miniatura_hero.jpg", video: "/videos/review-6.mp4" },
   ],
 };

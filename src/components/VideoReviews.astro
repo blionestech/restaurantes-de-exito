@@ -3,7 +3,7 @@ import { videoReviews } from "../data/content";
 const reviews = videoReviews.reviews;
 ---
 
-<section class="section-padding relative overflow-hidden">
+<section id="reviews" class="section-padding relative overflow-hidden">
     <div class="relative z-10 container-narrow mb-16">
         <div class="text-center">
             <h2
@@ -32,14 +32,20 @@ const reviews = videoReviews.reviews;
             {/* First set */}
             {
                 reviews.map((review) => (
-                    <div class="review-card">
+                    <div class="review-card group">
                         <div class="review-video-container">
+                            <!-- Overlay Image & Details -->
+                            {review.thumbnail && (
+                                <img src={review.thumbnail} alt={review.name} class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-300 group-[.playing]:opacity-0" />
+                            )}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10 pointer-events-none transition-opacity duration-300 group-[.playing]:opacity-0"></div>
+
                             <video
-                                class="review-video"
+                                class="review-video relative z-0"
+                                poster={review.thumbnail}
                                 playsinline
                                 muted
                                 loop
-                                autoplay
                                 preload="metadata"
                             >
                                 <source src={review.video} type="video/mp4" />
@@ -59,14 +65,20 @@ const reviews = videoReviews.reviews;
             {/* Duplicate set for seamless loop */}
             {
                 reviews.map((review) => (
-                    <div class="review-card">
+                    <div class="review-card group">
                         <div class="review-video-container">
+                            <!-- Overlay Image & Details -->
+                            {review.thumbnail && (
+                                <img src={review.thumbnail} alt={review.name} class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-300 group-[.playing]:opacity-0" />
+                            )}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10 pointer-events-none transition-opacity duration-300 group-[.playing]:opacity-0"></div>
+
                             <video
-                                class="review-video"
+                                class="review-video relative z-0"
+                                poster={review.thumbnail}
                                 playsinline
                                 muted
                                 loop
-                                autoplay
                                 preload="metadata"
                             >
                                 <source src={review.video} type="video/mp4" />

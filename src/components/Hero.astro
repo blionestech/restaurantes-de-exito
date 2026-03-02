@@ -31,8 +31,48 @@ import { hero } from "../data/content";
 
     <div class="relative z-10 container-narrow w-full section-padding">
         <div class="flex flex-col items-center text-center">
+            <!-- Badge -->
+            <div
+                class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-brand-900 mb-6 shadow-lg shadow-brand-900/20 animate-fade-in-up hover:scale-105 transition-transform duration-300"
+                style="border: 1px solid rgba(243, 93, 9, 0.5);"
+            >
+                <div class="relative flex items-center justify-center">
+                    <span
+                        class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse absolute inline-flex"
+                    ></span>
+                    <span
+                        class="w-2 h-2 rounded-full bg-emerald-400 relative inline-flex opacity-75"
+                    ></span>
+                </div>
+                <span
+                    class="text-[10px] sm:text-xs md:text-sm font-bold text-white uppercase tracking-wider"
+                    >Paquete Restaurante de Éxito</span
+                >
+            </div>
+
+            <!-- Headline -->
+            <h1
+                class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight mb-8 sm:mb-10 animate-fade-in-up animate-delay-100 max-w-5xl px-2 sm:px-0"
+            >
+                <span class="text-brand-900 block mb-1 sm:mb-2"
+                    >Abre Tu Restaurante</span
+                >
+                <span
+                    class="text-transparent bg-clip-text"
+                    style="background: linear-gradient(to right, #f35d09, #f30606); -webkit-background-clip: text; background-clip: text;"
+                >
+                    Como Un Profesional
+                </span>
+                <span
+                    class="block text-xl sm:text-3xl lg:text-4xl mt-2 sm:mt-3 text-brand-800"
+                    >— Sin Perder Tiempo ni Dinero en el Intento</span
+                >
+            </h1>
+
             <!-- Video Section -->
-            <div class="w-full max-w-5xl relative animate-fade-in-up mb-12">
+            <div
+                class="w-full max-w-5xl relative animate-fade-in-up animate-delay-200 mb-10 sm:mb-12"
+            >
                 <div
                     class="relative rounded-2xl overflow-hidden shadow-2xl shadow-brand-900/10 border border-brand-900/5 group"
                 >
@@ -65,44 +105,6 @@ import { hero } from "../data/content";
                 >
                 </div>
             </div>
-
-            <!-- Badge -->
-            <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-900 mb-10 shadow-lg shadow-brand-900/20 animate-fade-in-up animate-delay-100 hover:scale-105 transition-transform duration-300"
-                style="border: 1px solid rgba(243, 93, 9, 0.5);"
-            >
-                <div class="relative flex items-center justify-center">
-                    <span
-                        class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse absolute inline-flex"
-                    ></span>
-                    <span
-                        class="w-2 h-2 rounded-full bg-emerald-400 relative inline-flex opacity-75"
-                    ></span>
-                </div>
-                <span
-                    class="text-xs sm:text-sm font-bold text-white uppercase tracking-wider"
-                    >Paquete Restaurante de Éxito</span
-                >
-            </div>
-
-            <!-- Headline -->
-            <h1
-                class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 animate-fade-in-up animate-delay-100 max-w-5xl"
-            >
-                <span class="text-brand-900 block mb-2"
-                    >Abre Tu Restaurante</span
-                >
-                <span
-                    class="text-transparent bg-clip-text"
-                    style="background: linear-gradient(to right, #f35d09, #f30606); -webkit-background-clip: text; background-clip: text;"
-                >
-                    Como Un Profesional
-                </span>
-                <span
-                    class="block text-2xl sm:text-3xl lg:text-4xl mt-3 text-brand-800"
-                    >— Sin Perder Tiempo ni Dinero en el Intento</span
-                >
-            </h1>
 
             <!-- Subheadline -->
             <p
